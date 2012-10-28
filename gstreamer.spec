@@ -1,13 +1,13 @@
-%define		gst_major_ver	0.10
+%define		gst_major_ver	1.0
 
 Summary:	GStreamer Streaming-media framework runtime
 Name:		gstreamer
-Version:	0.10.36
-Release:	5
+Version:	1.0.2
+Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://gstreamer.freedesktop.org/src/gstreamer/%{name}-%{version}.tar.xz
-# Source0-md5:	15389c73e091b1dda915279c388b9cb2
+# Source0-md5:	1faa5a86feddf87af57e72f42d060b3d
 Patch0:		%{name}-without_ps_pdf.patch
 Patch1:		%{name}-eps.patch
 Patch2:		%{name}-inspect-rpm-format.patch
@@ -110,24 +110,15 @@ rm -f $RPM_BUILD_ROOT%{gstlibdir}/*.la
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	libs -p /sbin/ldconfig
-%postun	libs -p /sbin/ldconfig
+%post	libs -p /usr/sbin/ldconfig
+%postun	libs -p /usr/sbin/ldconfig
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
-%attr(755,root,root) %{_bindir}/gst-feedback
-%attr(755,root,root) %{_bindir}/gst-feedback-%{gst_major_ver}
-%attr(755,root,root) %{_bindir}/gst-inspect
 %attr(755,root,root) %{_bindir}/gst-inspect-%{gst_major_ver}
-%attr(755,root,root) %{_bindir}/gst-launch
 %attr(755,root,root) %{_bindir}/gst-launch-%{gst_major_ver}
-%attr(755,root,root) %{_bindir}/gst-typefind
 %attr(755,root,root) %{_bindir}/gst-typefind-%{gst_major_ver}
-%attr(755,root,root) %{_bindir}/gst-xmlinspect
-%attr(755,root,root) %{_bindir}/gst-xmlinspect-%{gst_major_ver}
-%attr(755,root,root) %{_bindir}/gst-xmllaunch
-%attr(755,root,root) %{_bindir}/gst-xmllaunch-%{gst_major_ver}
 %attr(755,root,root) %{gstlibdir}/gst-plugin-scanner
 %attr(755,root,root) %{gstlibdir}/*.so
 
