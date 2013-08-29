@@ -2,12 +2,12 @@
 
 Summary:	GStreamer Streaming-media framework runtime
 Name:		gstreamer
-Version:	1.0.8
+Version:	1.0.10
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://gstreamer.freedesktop.org/src/gstreamer/%{name}-%{version}.tar.xz
-# Source0-md5:	fb0c73470e8dd5dab01e5e9e62db9db9
+# Source0-md5:	fddc83a851f7c695bd667b7325455b47
 Patch0:		%{name}-without_ps_pdf.patch
 Patch1:		%{name}-eps.patch
 Patch2:		%{name}-inspect-rpm-format.patch
