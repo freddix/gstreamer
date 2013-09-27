@@ -2,12 +2,12 @@
 
 Summary:	GStreamer Streaming-media framework runtime
 Name:		gstreamer
-Version:	1.0.10
+Version:	1.2.0
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://gstreamer.freedesktop.org/src/gstreamer/%{name}-%{version}.tar.xz
-# Source0-md5:	fddc83a851f7c695bd667b7325455b47
+# Source0-md5:	250b4bec48b0986103f5aab75e43cef9
 Patch0:		%{name}-without_ps_pdf.patch
 Patch1:		%{name}-eps.patch
 Patch2:		%{name}-inspect-rpm-format.patch
@@ -136,7 +136,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*-%{gst_major_ver}.so
-%{_libdir}/lib*-%{gst_major_ver}.la
 %{_aclocaldir}/gst-element-check-%{gst_major_ver}.m4
 %{gstincludedir}
 %{_pkgconfigdir}/*-%{gst_major_ver}.pc
