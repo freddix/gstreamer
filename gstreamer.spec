@@ -2,12 +2,12 @@
 
 Summary:	GStreamer Streaming-media framework runtime
 Name:		gstreamer
-Version:	1.2.4
+Version:	1.4.3
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://gstreamer.freedesktop.org/src/gstreamer/%{name}-%{version}.tar.xz
-# Source0-md5:	74d8f674187a5f0ddf38da594c3998c3
+# Source0-md5:	7934fd965bbe1398f0ff1edeb7f1fd89
 Patch0:		%{name}-without_ps_pdf.patch
 Patch1:		%{name}-eps.patch
 Patch2:		%{name}-inspect-rpm-format.patch
@@ -89,7 +89,9 @@ patch -p0 < common/gettext.patch
 	--disable-static	\
 	--disable-tests		\
 	--enable-docbook	\
-	--with-html-dir=%{_gtkdocdir}
+	--with-html-dir=%{_gtkdocdir}	\
+	--with-package-name="GStreamer (Freddix)"   \
+	--with-package-origin="http://freddix.org/"
 %{__make}
 
 %install
